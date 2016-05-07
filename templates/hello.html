@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>今天</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1 style="color: darkcyan">Hello World!</h1>
+{# 顯示現在時間 #}
+<p style="color: blue">
+    現在時間 : {{ current_time }}
+</p>
+{# 顯示my_list = ["HTML", "CSS", "jQuery", "Python", "Django"] #}
+<lu>
+    {% for i in list %}
+        <li>{{ i }}</li>
+    {% endfor %}
+</lu>
+{# 顯示dict = {'天氣': '晴', '溫度': '21', '濕度': '70%'} #}
+{% for key,value in dict.items %}
+    <h3 style="color: darkgreen">
+        <font face="微軟正黑體">{{ key }} : {{ value }}</font>
+    </h3>
+{% endfor %}
+{# 顯示my_list2 = map(int, range(1, 101)) #}
+<p>{% for item in list2 %}
+    {{ item }}
+    {% if forloop.counter|divisibleby:'10' %},<br>
+    {% elif not forloop.last %},
+    {% endif %}
+{% endfor %}
+</p>
+{#    dict2 = {}#}
+{#    first_names = ["三", "四"]#}
+{#    last_names = ["張", "李"]#}
+{#    first_names.append("五")#}
+{#    last_names.append("王")#}
+{#    for name in zip(last_names, first_names):#}
+{#    dict2.update({name}) #}
+<p style="color: brown">
+    {% for key,value in dict2.items %}
+        {{ key }}{{ value }}<br>
+    {% endfor %}
+</p>
+
+</body>
+</html>
